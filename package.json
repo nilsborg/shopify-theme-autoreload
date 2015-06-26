@@ -1,0 +1,20 @@
+{
+  "name": "shopify-theme-autoreload",
+  "version": "1.0.0",
+  "description": "Checks for file changes in your local theme directory, uploads the changed files to shopify and reloads your browser. Uses gulp.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.7.12",
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-filter": "^2.0.2",
+    "gulp-shell": "^0.4.2",
+    "gulp-sass": "^2.0.2",
+    "gulp-watch": "^4.2.4",
+    "minimist": "^1.1.1"
+  },
+  "devDependencies": {},
+  "author": "Nils Borchers",
+  "license": "ISC",
+  "repository" : { "type" : "git", "url" : "https://github.com/nilsborchers/shopify-theme-autoreload.git" }
+}
