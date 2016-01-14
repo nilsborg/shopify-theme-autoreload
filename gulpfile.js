@@ -19,6 +19,9 @@ function isChanged(file) {
 }
 
 var filterChanged = filter(isChanged);
+var paths = {
+	shopfiles: ['**/*.liquid', 'locales/*.json']
+};
 
 gulp.task('serve', function() {
   browserSync.init({
@@ -48,9 +51,9 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('liquid', function() {
-  return gulp.src('**/*.liquid')
-    .pipe(watch('**/*.liquid'))
+gulp.task('shopfiles', function() {
+  return gulp.src(paths.shopfiles)
+    .pipe(watch(paths.shopfiles))
     .pipe(filterChanged)
     .pipe(shell([
       'theme upload <%= f(file.path) %>'
@@ -65,4 +68,4 @@ gulp.task('liquid', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['serve', 'liquid']);
+gulp.task('default', ['serve', 'shopfiles']);
